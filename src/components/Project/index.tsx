@@ -10,6 +10,8 @@ import { Text } from "@/styles/Text";
 import { useEffect, useState } from "react";
 import { FaGithub, FaShare } from "react-icons/fa";
 import { userData } from "@/utils/userData";
+import { Like } from "../Like";
+import { motion } from "framer-motion";
 
 interface ReposType {
   id: number;
@@ -27,7 +29,7 @@ export const Project = (): JSX.Element => {
     const fetchData = async () => {
       const data: Response = await fetch(
         `https://api.github.com/users/${userData.githubUser}/repos`
-      )
+      );
 
       const json = await data.json();
 
@@ -53,15 +55,18 @@ export const Project = (): JSX.Element => {
             color="grey1"
           >
             {repository.name}
+            <Like />
           </Text>
 
           {repository.language && (
             <ProjectStack>
               <Text type="body2">Linguagem:</Text>
               <ProjectStackTech>
-                <Text color="brand1" type="body2">
-                  {repository.language}
-                </Text>
+                <motion.div whileHover={{ scale: 1.2 }}>
+                  <Text color="brand1" type="body2">
+                    {repository.language}
+                  </Text>
+                </motion.div>
               </ProjectStackTech>
             </ProjectStack>
           )}

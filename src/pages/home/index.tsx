@@ -24,32 +24,39 @@ import {
   ProjectAreaWrapperColumns,
 } from "./style";
 
+import { motion } from "framer-motion";
 
 export const Home = (): JSX.Element => {
   return (
     <main>
-      <Header>
-        <Container>
-          <HeaderContent>
-            <Text as="h1" type="heading1" color="grey5">
-              Criando experiências por meio da tecnologia{" "}
-            </Text>
-            <Text type="body1" color="grey6">
-              Sou estudante de programação na Kenzie Academy Brasil, participei
-              de diversos projetos resolvendo problemas de alto nível e
-              desenvolvendo habilidades
-            </Text>
-            <HeaderButtonsArea>
-              <Button as="a" href="#projetos">
-                Projetos
-              </Button>
-              <Button as="a" href="#tecnologias" type="btLink" color="grey5">
-                Tecnologias
-              </Button>
-            </HeaderButtonsArea>
-          </HeaderContent>
-        </Container>
-      </Header>
+      <motion.div
+        initial={{ backgroundColor: "#482b99" }}
+        whileHover={{ backgroundColor: "#000", height: 660 }}
+      >
+        <Header>
+          <Container>
+            <HeaderContent>
+              <Text as="h1" type="heading1" color="grey5">
+                Criando experiências por meio da tecnologia{" "}
+              </Text>
+              <Text type="body1" color="grey6">
+                Sou estudante de programação na Kenzie Academy Brasil,
+                participei de diversos projetos resolvendo problemas de alto
+                nível e desenvolvendo habilidades
+              </Text>
+              <HeaderButtonsArea>
+                <Button as="a" href="#projetos">
+                  Projetos
+                </Button>
+                <Button as="a" href="#tecnologias" type="btLink" color="grey5">
+                  Tecnologias
+                </Button>
+              </HeaderButtonsArea>
+            </HeaderContent>
+          </Container>
+        </Header>
+      </motion.div>
+
       <StackSection id="tecnologias">
         <Container>
           <Text as="h4" type="heading3" color="grey1">

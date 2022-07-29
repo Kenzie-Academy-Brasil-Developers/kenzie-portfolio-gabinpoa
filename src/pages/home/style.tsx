@@ -5,7 +5,7 @@ import { Button } from "@/styles/Buttons";
 import img from "@/public/static/img/background/dots.svg";
 
 export const Header = styled("header", {
-  backgroundColor: "$brand1",
+  backgroundColor: "transparent",
   padding: "12rem 0 8rem 0",
   backgroundImage: `url(${img})`,
   backgroundRepeat: "no-repeat",

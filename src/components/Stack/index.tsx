@@ -1,6 +1,7 @@
 import { StackCard } from "./style";
 import { Text } from "@/styles/Text";
 import { IconType } from "react-icons/lib";
+import { motion } from "framer-motion";
 
 interface StackProps {
   title: string;
@@ -15,13 +16,21 @@ export const Stack = (
   const isString = typeof Icon === "string";
 
   return (
-    <StackCard key={key}>
-      <Text>{title}</Text>
-      {isString ? (
-        <img src={Icon} alt={title} title={title} height="84px" width="84px" />
-      ) : (
-        <Icon size={84} />
-      )}
-    </StackCard>
+    <motion.div>
+      <StackCard key={key}>
+        <Text>{title}</Text>
+        {isString ? (
+          <img
+            src={Icon}
+            alt={title}
+            title={title}
+            height="84px"
+            width="84px"
+          />
+        ) : (
+          <Icon size={84} />
+        )}
+      </StackCard>
+    </motion.div>
   );
 };
